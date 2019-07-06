@@ -1,4 +1,12 @@
-import { Controller, Body, HttpStatus, Post, Get, Res } from '@nestjs/common';
+import {
+  Controller,
+  Body,
+  HttpStatus,
+  Post,
+  Get,
+  Res,
+  Param,
+} from '@nestjs/common';
 import { TypeService } from './type.service';
 import { ApiErrorCode } from '../../core/status/api-error-code.enum';
 import { CreateTypeDto } from './dto/create-type_dto';
@@ -6,6 +14,23 @@ import { CreateTypeDto } from './dto/create-type_dto';
 @Controller('type')
 export class TypeController {
   constructor(private readonly typeService: TypeService) {}
+
+  @Get(':id')
+  async findOne(@Param('id') id, @Res() res) {
+    const data = await this.typeService.findOne(id);
+    if (data) {
+      res.status(HttpStatus.OK).send({
+        errorCode: ApiErrorCode.SUCCESS,
+        errorMessage: '请求成功',
+        data,
+      });
+    } else {
+      res.status(HttpStatus.OK).send({
+        errorCode: ApiErrorCode.SUCCESS,
+        errorMessage: 'ID无效',
+      });
+    }
+  }
 
   @Post()
   async createType(@Body() params: CreateTypeDto, @Res() res) {

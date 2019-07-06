@@ -31,9 +31,9 @@ export class GoodsController {
     }
   }
 
-  @Get(':typeid')
-  async findAll(@Param('typeid') typeid, @Res() res) {
-    const data = await this.goodsService.findAll(typeid);
+  @Get()
+  async findAll(@Res() res) {
+    const data = await this.goodsService.findAll();
     if (data) {
       return res.status(HttpStatus.OK).send({
         errorCode: ApiErrorCode.SUCCESS,
@@ -62,5 +62,10 @@ export class GoodsController {
         errorMessage: '系统繁忙，请稍后再试',
       });
     }
+  }
+
+  @Post('search')
+  async serach(@Body() params) {
+    return await this.goodsService.searchGood(params.title);
   }
 }

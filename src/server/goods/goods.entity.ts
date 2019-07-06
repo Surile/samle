@@ -1,5 +1,11 @@
-import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm';
-
+import {
+  PrimaryGeneratedColumn,
+  Entity,
+  Column,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
+import { Type } from '../type/type.entity';
 @Entity()
 export class Goods {
   @PrimaryGeneratedColumn()
@@ -8,8 +14,9 @@ export class Goods {
   @Column()
   title: string;
 
-  @Column('int')
-  typeid: number;
+  @OneToOne(type => Type)
+  @JoinColumn()
+  type: Type;
 
   @Column('int')
   status: number;

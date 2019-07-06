@@ -17,7 +17,9 @@ export class TypeService {
   }
 
   async findAll() {
-    const data = await this.typeRepository.find();
+    const data = await this.typeRepository.find({
+      relations: ['detail'],
+    });
     return data.filter(item => item.status === 1);
   }
 
@@ -25,5 +27,9 @@ export class TypeService {
     const data = await this.typeRepository.findOne(id);
     data.status = status;
     return this.typeRepository.save(data);
+  }
+
+  async findOne(id: number) {
+    return await this.typeRepository.findOne(id);
   }
 }
