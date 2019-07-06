@@ -2,10 +2,10 @@
   "type": "mysql",
   "host": "localhost",
   "port": 3306,
-  "username": "users_service",
-  "password": "123",
-  "database": "surile",
-  "entities": ["src/**/**.entity{.ts,.js}"],
+  "username": "root",
+  "password": "Zly980320",
+  "database": "wx_test",
+  "entities": ["src/**/*.entity{.ts,.js}"],
   "synchronize": true,
   "logging": true
 }
