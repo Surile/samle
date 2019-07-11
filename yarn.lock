@@ -39,10 +39,10 @@
     optional "0.1.4"
     uuid "3.3.2"
 
-"@nestjs/platform-express@^6.0.0":
-  version "6.4.1"
-  resolved "https://registry.npm.taobao.org/@nestjs/platform-express/download/@nestjs/platform-express-6.4.1.tgz#6af69a1c8947c31618e50101147adfa34024d735"
-  integrity sha1-avaaHIlHwxYY5QEBFHrfo0Ak1zU=
+"@nestjs/platform-express@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.5.2.tgz#78c8d948fe52a389afd6e9d78a9c02cd4da9de8e"
+  integrity sha512-F/y+P7IkT6xALfPZO/MwiHHVl/3rYjkD4IvNa21d4QVLnBrp3CcQztysLTWtqmHMA8T5tUeoAZSDU9MnhMlK2w==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
