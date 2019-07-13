@@ -30,6 +30,13 @@ AI识别 `/image/serach`
 
 修改`config/index.ts`中微信小程序和百度的`ApiKey`和`AppSecret`
 
+### 修改数据库
+
+修改目录下`ormconfig.json`文件
+
+### 前端项目
+
+[Abraham](https://github.com/Surile/Abraham)
 
 ### 运行
 
@@ -38,8 +45,11 @@ AI识别 `/image/serach`
     yarn install || yarn start
 ```
 
+
 ### 浏览器打开
 
 ```javascipt
     http://localhost:3000
 ```
+
+
