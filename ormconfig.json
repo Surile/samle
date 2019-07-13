@@ -4,7 +4,7 @@
   "port": 3306,
   "username": "root",
   "password": "Zly19980320",
-  "database": "test",
+  "database": "wx_test",
   "entities": ["src/**/*.entity{.ts,.js}"],
   "synchronize": true,
   "logging": true

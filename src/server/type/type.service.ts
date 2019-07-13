@@ -11,25 +11,28 @@ export class TypeService {
     private readonly typeRepository: Repository<Type>,
   ) {}
 
-  async createType(params: CreateTypeDto) {
-    const data = await this.typeRepository.create(params);
-    return await this.typeRepository.save(data);
-  }
+  // async createType(params: CreateTypeDto) {
+  //   const data = await this.typeRepository.create(params);
+  //   return await this.typeRepository.save(data);
+  // }
 
   async findAll() {
     const data = await this.typeRepository.find({
-      relations: ['detail'],
+      relations: ['details'],
     });
     return data.filter(item => item.status === 1);
   }
 
-  async deleteType(id: number, status: number) {
-    const data = await this.typeRepository.findOne(id);
-    data.status = status;
-    return this.typeRepository.save(data);
-  }
+  // async deleteType(id: number, status: number) {
+  //   const data = await this.typeRepository.findOne(id);
+  //   data.status = status;
+  //   return this.typeRepository.save(data);
+  // }
 
   async findOne(id: number) {
-    return await this.typeRepository.findOne(id);
+    return await this.typeRepository.findOne({
+      relations: ['details'],
+      where: { id },
+    });
   }
 }

@@ -1,10 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToMany,
-  JoinTable,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Detail } from './detail.entity';
 @Entity()
 export class Type {
@@ -15,13 +9,16 @@ export class Type {
   title: string;
 
   @Column()
-  alias: string;
+  image?: string;
 
   @Column()
   icon: string;
 
-  @OneToMany(type => Detail, detail => detail.text)
-  detail: Detail[];
+  @OneToMany(type => Detail, detail => detail.type)
+  details: Detail[];
+
+  @Column()
+  english: string;
 
   @Column()
   description: string;

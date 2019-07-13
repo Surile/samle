@@ -2,8 +2,10 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  ManyToOne,
   JoinColumn,
+  OneToOne,
+  OneToMany,
+  ManyToOne,
 } from 'typeorm';
 import { Type } from './type.entity';
 
@@ -15,6 +17,7 @@ export class Detail {
   @Column()
   text: string;
 
-  @ManyToOne(type => Type, type => type.id)
+  @ManyToOne(type => Type, type => type.details)
+  @JoinColumn({ name: 'type_id' })
   type: Type;
 }

@@ -4,6 +4,7 @@ import {
   Column,
   OneToOne,
   JoinColumn,
+  ManyToOne,
 } from 'typeorm';
 import { Type } from '../type/type.entity';
 @Entity()
@@ -14,10 +15,12 @@ export class Goods {
   @Column()
   title: string;
 
-  @OneToOne(type => Type)
-  @JoinColumn()
+  @ManyToOne(type => Type, type => type.id)
+  @JoinColumn({
+    name: 'type_id',
+  })
   type: Type;
 
-  @Column('int')
+  @Column()
   status: number;
 }
