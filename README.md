@@ -32,7 +32,7 @@ AI识别 `/image/serach`
 
 ### 修改数据库
 
-> 若是没有使用过Typeorm的同学们，请先简单了解下`Typeorm`文档中的[ormconfig](https://github.com/typeorm/typeorm/blob/master/docs/zh_CN/using-ormconfig.md)
+> 若是没有使用过Typeorm的同学们，请先简单了解下[Typeorm](https://github.com/typeorm/typeorm/blob/master/docs/zh_CN/README.md)
 
 修改目录下`ormconfig.json`文件
 
