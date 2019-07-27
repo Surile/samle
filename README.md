@@ -36,6 +36,9 @@ AI识别 `/image/serach`
 
 修改目录下`ormconfig.json`文件
 
+### 线上体验
+
+(http://119.3.108.116/api/)[http://119.3.108.116/api/]
 
 ### 前端项目
 
