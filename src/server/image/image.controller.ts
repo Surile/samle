@@ -19,7 +19,13 @@ export class ImageController {
   }
 
   @Post('upload')
-  @UseInterceptors(FileInterceptor('file'))
+  @UseInterceptors(
+    FileInterceptor('file', {
+      limits: {
+        fieldSize: 4 * 1024 * 1024,
+      },
+    }),
+  )
   async searchImage(@UploadedFile() file, @Body() params) {
     const data = file.buffer.toString('base64');
     return await this.imageService.imageClassfiy(params.token, data);

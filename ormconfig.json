@@ -1,10 +1,10 @@
 {
   "type": "mysql",
-  "host": "119.3.108.116",
+  "host": "127.0.0.1",
   "port": 3306,
   "username": "root",
-  "password": "Zly19980320",
-  "database": "samle",
+  "password": "123456",
+  "database": "test",
   "entities": ["src/**/*.entity{.ts,.js}"],
   "synchronize": true,
   "logging": true
